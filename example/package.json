@@ -8,6 +8,6 @@
   "dependencies": {
     "react": "^0.14.8",
     "react-native": "^0.23.0",
-    "react-native-offline-mode": "https://github.com/rauchy/react-native-offline-mode"
+    "react-native-offline-mode": "0.1.0"
   }
 }
