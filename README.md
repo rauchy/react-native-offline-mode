@@ -1,6 +1,8 @@
 # react-native-offline-mode
 A higher-order component for React Native which will conditionally show a component OR something else depending on internet connection availability.
 
+[![ScreenShot](https://raw.githubusercontent.com/rauchy/react-native-offline-mode/master/example.gif)]
+
 Install
 -------
 
