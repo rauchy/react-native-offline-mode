@@ -1,5 +1,5 @@
 # react-native-offline-mode
-A higher-order component for React Native which will conditionally show a component OR an error message depending on internet connection availability.
+A higher-order component for React Native which will conditionally show a component OR something else depending on internet connection availability.
 
 Install
 -------
