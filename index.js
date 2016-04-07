@@ -11,20 +11,12 @@ var {
 
 const RequiresConnection = (WhenOnline, whenOffline) => class RequiresConnection extends Component {
   componentWillMount () {
-    this.setState({
-      isConnected: true
-    })
+    this.setState({ isConnected: true })
 
-    NetInfo.isConnected.fetch().done((isConnected) =>
-      this.setState({
-        isConnected: isConnected
-      }))
+    let connect = (isConnected) => this.setState({ isConnected })
 
-    NetInfo.isConnected.addEventListener('change', (isConnected) => {
-      this.setState({
-        isConnected: isConnected
-      })
-    })
+    NetInfo.isConnected.fetch().done(connect)
+    NetInfo.isConnected.addEventListener('change', connect)
   }
 
   render () {
