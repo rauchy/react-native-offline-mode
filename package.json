@@ -1,0 +1,11 @@
+{
+  "name": "react-native-offline-mode",
+  "version": "0.0.0",
+  "description": "A higher-order component for React Native which will conditionally show a component OR an error message depending on internet connection availability.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omer Lachish <omer@rauchy.net> (http://www.twitter.com/rauchy)",
+  "license": "ISC"
+}
