@@ -11,6 +11,8 @@ import React, {
   View
 } from 'react-native';
 
+var RequiresConnection = require('react-native-offline-mode')
+
 class example extends Component {
   render() {
     return (
@@ -49,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('example', () => example);
+AppRegistry.registerComponent('example', () => RequiresConnection(example));
