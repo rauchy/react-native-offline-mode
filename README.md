@@ -18,7 +18,7 @@ Import `RequiresConnection` as a JavaScript module:
 import RequiresConnection from 'react-native-offline-mode';
 ```
 
-Then simply wrap whichever component you want to be connection-aware with a call to `RequiresConnection`.
+Then simply wrap whichever component you want to be connection-aware with a call to `RequiresConnection`. Take a look at the [example project](https://github.com/rauchy/react-native-offline-mode/tree/master/example) or simply [this commit](https://github.com/rauchy/react-native-offline-mode/commit/ad8a892bcc2dfc15c8d1fe6fda5da17911e59b61).
 
 ### Showing a default "no connectivity" message
 
