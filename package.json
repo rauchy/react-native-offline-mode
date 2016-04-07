@@ -1,7 +1,7 @@
 {
   "name": "react-native-offline-mode",
   "version": "0.1.0",
-  "description": "A higher-order component for React Native which will conditionally show a component OR an error message depending on internet connection availability.",
+  "description": "A higher-order component for React Native which will conditionally show a component OR something else depending on internet connection availability.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
