@@ -1,13 +1,11 @@
 'use strict'
-var React = require('react-native')
-
-var {
-  Component,
+import React, { Component } from 'react'
+import {
   NetInfo,
   StyleSheet,
   Text,
   View
-} = React
+} from 'react-native'
 
 const RequiresConnection = (WhenOnline, whenOffline) => class RequiresConnection extends Component {
   componentWillMount () {

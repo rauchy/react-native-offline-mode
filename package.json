@@ -1,6 +1,6 @@
 {
   "name": "react-native-offline-mode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A higher-order component for React Native which will conditionally show a component OR something else depending on internet connection availability.",
   "main": "index.js",
   "scripts": {
