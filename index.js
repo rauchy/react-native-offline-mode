@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native'
 
-const RequiresConnection = (WhenOnline, whenOffline) => class RequiresConnection extends Component {
+const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection extends Component {
   componentWillMount () {
     this.setState({ isConnected: true })
 
@@ -20,10 +20,10 @@ const RequiresConnection = (WhenOnline, whenOffline) => class RequiresConnection
   render () {
     if (this.state.isConnected) {
       return <WhenOnline {...this.props} />
-    } else if (typeof whenOffline === 'function') {
-      return whenOffline()
+    } else if (typeof WhenOffline === 'function') {
+      return <WhenOffline {...this.props} />
     } else {
-      const message = whenOffline || "We're sorry, there seems to be a problem with your internet connection. The application will resume as soon as it is able to reconnect to the internet."
+      const message = WhenOffline || "We're sorry, there seems to be a problem with your internet connection. The application will resume as soon as it is able to reconnect to the internet."
 
       return <View style={styles.container}>
         <Text style={styles.connectionProblemMessage}>

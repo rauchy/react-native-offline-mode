@@ -32,6 +32,17 @@ class example extends Component {
   }
 }
 
+class OfflineClass extends Component {
+  render() {
+    return (
+      <Text>Oh snap! You're offline!</Text>
+    )
+  }
+}
+
+const offlineFunction = () => <Text>Oh noes, you're out of internetz!</Text>
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -51,4 +62,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('example', () => RequiresConnection(example));
+//AppRegistry.registerComponent('example', () => RequiresConnection(example, OfflineClass));
+AppRegistry.registerComponent('example', () => RequiresConnection(example, offlineFunction));
