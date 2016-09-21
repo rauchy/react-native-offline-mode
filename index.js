@@ -13,8 +13,10 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
 
     let connect = (isConnected) => this.setState({ isConnected })
 
-    NetInfo.isConnected.fetch().done(connect)
-    NetInfo.isConnected.addEventListener('change', connect)
+    NetInfo.isConnected.fetch().done((isConnected) => {
+      connect(isConnected)
+      NetInfo.isConnected.addEventListener('change', connect)
+    })
   }
 
   render () {
