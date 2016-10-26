@@ -27,11 +27,13 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
     } else {
       const message = WhenOffline || "We're sorry, there seems to be a problem with your internet connection. The application will resume as soon as it is able to reconnect to the internet."
 
-      return <View style={styles.container}>
-        <Text style={styles.connectionProblemMessage}>
-          {message}
-        </Text>
-      </View>
+      return (
+        <View style={styles.container}>
+          <Text style={styles.connectionProblemMessage}>
+            {message}
+          </Text>
+        </View>
+      );
     }
   }
 }
