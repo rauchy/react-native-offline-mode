@@ -13,7 +13,7 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
     this.state = { isConnected: true }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     let connect = (isConnected) => this.setState({ isConnected })
 
     NetInfo.isConnected.fetch().done((isConnected) => {
