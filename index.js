@@ -8,9 +8,12 @@ import {
 } from 'react-native'
 
 const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection extends Component {
-  componentWillMount () {
-    this.setState({ isConnected: true })
+  constructor (props) {
+    super(props)
+    this.state = { isConnected: true }
+  }
 
+  componentWillMount () {
     let connect = (isConnected) => this.setState({ isConnected })
 
     NetInfo.isConnected.fetch().done((isConnected) => {
