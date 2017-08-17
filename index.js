@@ -14,7 +14,7 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
   }
 
   componentDidMount () {
-    let connect = (reach) => this.setState({ isConnected: reach !== 'none' })
+    let connect = (reach) => this.setState({ isConnected: reach.toLowerCase() !== 'none' })
 
     NetInfo.fetch().done((reach) => {
       connect(reach)
