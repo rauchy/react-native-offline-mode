@@ -14,7 +14,7 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
   }
 
   componentDidMount () {
-    let connect = (reach) => this.setState({ isConnected: reach !== 'none' })
+    let connect = (reach) => this.setState({ isConnected: reach.toLowerCase() !== 'none' })
 
     NetInfo.fetch().done((reach) => {
       connect(reach)
@@ -24,9 +24,9 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
 
   render () {
     if (this.state.isConnected) {
-      return <WhenOnline {...this.props} />
+      return <WhenOnline {...this.props} ref='online'/>
     } else if (typeof WhenOffline === 'function') {
-      return <WhenOffline {...this.props} />
+      return <WhenOffline {...this.props} ref='offline'/>
     } else {
       const message = WhenOffline || "We're sorry, there seems to be a problem with your internet connection. The application will resume as soon as it is able to reconnect to the internet."
 
