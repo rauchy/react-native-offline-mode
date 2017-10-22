@@ -14,11 +14,11 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
   }
 
   componentDidMount () {
-    let connect = (reach) => this.setState({ isConnected: reach !== 'none' })
+    let connect = ({ type }) => this.setState({ isConnected: type !== 'none' })
 
-    NetInfo.fetch().done((reach) => {
+    NetInfo.getConnectionInfo().done((reach) => {
       connect(reach)
-      NetInfo.addEventListener('change', connect)
+      NetInfo.addEventListener('connectionChange', connect)
     })
   }
 
