@@ -10,6 +10,7 @@ import React, {
   Text,
   View
 } from 'react-native';
+import RequiresConnection from 'react-native-offline-mode'
 
 class example extends Component {
   render() {
@@ -28,6 +29,16 @@ class example extends Component {
     );
   }
 }
+
+class OfflineClass extends Component {
+  render() {
+    return (
+      <Text>Oh snap! You're offline!</Text>
+    )
+  }
+}
+
+const offlineFunction = () => <Text>Oh noes, you're out of internetz!</Text>
 
 const styles = StyleSheet.create({
   container: {
@@ -48,4 +59,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('example', () => example);
+//AppRegistry.registerComponent('example', () => RequiresConnection(example, OfflineClass));
+AppRegistry.registerComponent('example', () => RequiresConnection(example, offlineFunction));
