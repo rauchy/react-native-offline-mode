@@ -16,8 +16,8 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
   componentDidMount () {
     let connect = ({ type }) => this.setState({ isConnected: type !== 'none' })
 
-    NetInfo.getConnectionInfo().done((reach) => {
-      connect(reach)
+    NetInfo.getConnectionInfo().done((connectionInfo) => {
+      connect({ type: connectionInfo.type })
       NetInfo.addEventListener('connectionChange', connect)
     })
   }
