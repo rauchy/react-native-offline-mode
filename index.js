@@ -21,6 +21,10 @@ const RequiresConnection = (WhenOnline, WhenOffline) => class RequiresConnection
       NetInfo.addEventListener('connectionChange', connect)
     })
   }
+  
+  componentWillUnmount () {
+      NetInfo.removeEventListener('connectionChange')
+  }
 
   render () {
     if (this.state.isConnected) {
